@@ -1,0 +1,37 @@
+;
+; 001_Sample.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = System
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider    = %ProviderString%
+DriverVer   = 02/03/2023,9,9,9,9
+CatalogFile = 001_Sample.cat
+PnpLockdown = 1
+
+;This template is supported for OS version 17763 (Windows 10 version 1809) and after.
+;For Windows OS prior to Windows 10 1809 set DefaultDestDir = 12
+[DestinationDirs]
+DefaultDestDir     = 12
+001_Sample.DriverFiles = 12            ;%windir%\system32\drivers
+001_Sample.UserFiles   = 10,FltMgr     ;%windir%\FltMgr
+
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+
+
+;[Manufacturer]
+;%ManufacturerName%=Standard,NT$ARCH$
+
+[Standard.NT$ARCH$]
+
+
+[Strings]
+ManufacturerName="MyCompany - for test use only" ;TODO: Replace with your manufacturer name
+ProviderString = "TODO-Set-Provider"
+DiskName       = "001_Sample Source Disk"
